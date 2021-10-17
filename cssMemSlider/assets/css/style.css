@@ -134,7 +134,7 @@ body {
 .slider__info-span {
   position: relative;
   display: block;
-  padding-left: 8px;
+  padding-left: 0.8rem;
   font-size: 2.5rem;
   opacity: 0;
 }
@@ -186,18 +186,18 @@ body {
 
 .slider__label {
   position: relative;
-  top: 0px;
+  top: 0;
   left: 0;
-  margin: 3px;
-  padding: 15px 5px;
+  margin: 0.3rem;
+  padding: 1.5rem 0.5rem;
   cursor: pointer;
 }
 
 .slider__bullets-span {
   display: inline-block;
-  height: 15px;
+  height: 1.5rem;
   position: relative;
-  width: 15px;
+  width: 1.5rem;
   border-radius: 50%;
   background: var(--secondayr-color);
   /* transition: all 0.3s ease; */
@@ -228,7 +228,7 @@ body {
   .slider__bullets
   .slider__label
   > .slider__bullets-span4 {
-  border: 2px solid #71abfe;
+  border: 0.2rem solid #71abfe;
   background: transparent;
 }
 
@@ -252,7 +252,7 @@ body {
   .slider__bullets
   .slider__label:hover
   > .slider__bullets-span4 {
-  border: 2px solid white;
+  border: 0.2rem solid white;
   background: transparent;
 }
 
