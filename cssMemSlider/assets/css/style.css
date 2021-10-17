@@ -122,7 +122,6 @@ body {
 .slider__info {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
@@ -133,42 +132,23 @@ body {
 
 .slider__info-span {
   position: relative;
-  display: block;
+  display: none;
   padding-left: 0.8rem;
   font-size: 2.5rem;
-  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {
   .slider__info-span {
+    display: none;
     font-size: 2.2rem;
   }
-}
-
-.slider__info-span1 {
-  display: block;
-}
-
-.slider__info-span2 {
-  display: block;
-  transform: translateY(-100%);
-}
-
-.slider__info-span3 {
-  display: block;
-  transform: translateY(-200%);
-}
-
-.slider__info-span4 {
-  display: block;
-  transform: translateY(-300%);
 }
 
 #slider__input1:checked ~ .slider__control .slider__info > .slider__info-span1,
 #slider__input2:checked ~ .slider__control .slider__info > .slider__info-span2,
 #slider__input3:checked ~ .slider__control .slider__info > .slider__info-span3,
 #slider__input4:checked ~ .slider__control .slider__info > .slider__info-span4 {
-  opacity: 1;
+  display: block;
   animation-name: example;
   animation-duration: 1s;
 }
@@ -200,7 +180,6 @@ body {
   width: 1.5rem;
   border-radius: 50%;
   background: var(--secondayr-color);
-  /* transition: all 0.3s ease; */
   transition: background 0.2s;
 }
 
