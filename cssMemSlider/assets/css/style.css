@@ -187,6 +187,11 @@ body {
   background: var(--color-white);
 }
 
+.slider__label:active .slider__bullets-span {
+  border: 0.2rem solid white;
+  background: transparent;
+}
+
 #slider__input1:checked
   ~ .slider__control
   .slider__bullets
