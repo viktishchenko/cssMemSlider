@@ -1,0 +1,264 @@
+:root {
+  --color-dark: #000;
+  --color-white: #fff;
+  --color-light: #e2e2e2;
+  --text-color: #000000ad;
+  --bg-color: #363636;
+  --link-color: #dc717d;
+  --primary-color: #445b7c;
+  --secondayr-color: #71abfe;
+}
+
+/* -------------------------------- 
+
+Default style
+
+-------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: normal;
+  background-color: var(--bg-color);
+  color: var(--color-light);
+}
+
+.main {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.main__heading {
+  text-align: center;
+  padding: 7% 0 3%;
+}
+
+@media screen and (max-width: 768px) {
+  .main__heading {
+    padding: 10% 0 6%;
+  }
+}
+
+.slider {
+  width: 100%;
+}
+.slider__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+}
+
+.slider__input {
+  display: none;
+}
+
+.slider__images {
+  max-width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider__img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  border-radius: 1.5rem;
+  opacity: 0;
+}
+
+.slider__img-one {
+  display: block;
+  transform: translateX(0);
+}
+.slider__img-two {
+  display: block;
+  transform: translateX(-100%);
+}
+.slider__img-three {
+  display: block;
+  transform: translateX(-200%);
+}
+.slider__img-four {
+  display: block;
+  transform: translateX(-300%);
+}
+
+#slider__input1:checked ~ .slider__images > .slider__img-one,
+#slider__input2:checked ~ .slider__images > .slider__img-two,
+#slider__input3:checked ~ .slider__images > .slider__img-three,
+#slider__input4:checked ~ .slider__images > .slider__img-four {
+  opacity: 1;
+  animation-name: slidein;
+  animation-duration: 0.7s;
+}
+
+.slider__control {
+  display: flex;
+  justify-content: space-between;
+  max-height: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .slider__control {
+    flex-direction: column;
+  }
+}
+
+.slider__info {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .slider__info {
+    order: 2;
+  }
+}
+
+.slider__info-span {
+  position: relative;
+  display: none;
+  padding-left: 0.8rem;
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .slider__info-span {
+    display: none;
+    font-size: 2.2rem;
+  }
+}
+
+#slider__input1:checked ~ .slider__control .slider__info > .slider__info-span1,
+#slider__input2:checked ~ .slider__control .slider__info > .slider__info-span2,
+#slider__input3:checked ~ .slider__control .slider__info > .slider__info-span3,
+#slider__input4:checked ~ .slider__control .slider__info > .slider__info-span4 {
+  display: block;
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+.slider__bullets {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .slider__bullets {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
+.slider__label {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0.3rem;
+  padding: 1.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.slider__bullets-span {
+  display: inline-block;
+  height: 1.5rem;
+  position: relative;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: var(--secondayr-color);
+  transition: background 0.2s;
+}
+
+.slider__label:hover .slider__bullets-span {
+  background: var(--color-white);
+}
+
+.slider__label:active .slider__bullets-span {
+  border: 0.2rem solid white;
+  background: transparent;
+}
+
+#slider__input1:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label
+  > .slider__bullets-span1,
+#slider__input2:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label
+  > .slider__bullets-span2,
+#slider__input3:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label
+  > .slider__bullets-span3,
+#slider__input4:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label
+  > .slider__bullets-span4 {
+  border: 0.2rem solid #71abfe;
+  background: transparent;
+}
+
+#slider__input1:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label:hover
+  > .slider__bullets-span1,
+#slider__input2:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label:hover
+  > .slider__bullets-span2,
+#slider__input3:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label:hover
+  > .slider__bullets-span3,
+#slider__input4:checked
+  ~ .slider__control
+  .slider__bullets
+  .slider__label:hover
+  > .slider__bullets-span4 {
+  border: 0.2rem solid white;
+  background: transparent;
+}
+
+@keyframes example {
+  0% {
+    left: -3rem;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  from {
+    right: -3rem;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
